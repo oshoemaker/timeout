@@ -46,7 +46,8 @@ function timeout (time, options) {
   return function (req, res, next) {
     var id = setTimeout(function () {
       req.timedout = true
-      req.emit('timeout', delay)
+      console.log('ERROR: request timed out');
+      console.log('req.body', req.body);
     }, delay)
 
     if (respond) {
